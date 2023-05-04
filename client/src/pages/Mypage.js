@@ -1,19 +1,20 @@
 import axios from 'axios';
 import React from 'react';
 
-export default function Mypage({ userInfo }) {
+export default function Mypage({ userInfo, setUserInfo, setIsLogin }) {
   const logoutHandler = () => {
-    /*
-    TODO: Logout 버튼을 눌렀을 시 Login 페이지로 돌아갈 수 있도록 구현하세요. 
+    //TODO: Logout 버튼을 눌렀을 시 Login 페이지로 돌아갈 수 있도록 구현하세요.
     return axios
-      .post(logout을 담당하는 endpoint)
+      .post('http://localhost:4000/logout')
       .then((res) => {
-        로그아웃에 성공했다면 App의 상태를 변경하세요.
+        //로그아웃에 성공했다면 App의 상태를 변경하세요.
+        setIsLogin(false);
+        setUserInfo(null);
       })
       .catch((err) => {
-        로그아웃에 실패했다면 그에 대한 에러 핸들링을 구현하세요. 
+        //로그아웃에 실패했다면 그에 대한 에러 핸들링을 구현하세요.
+        console.log(`ERR ${err.response.status} ${err.response.data}`);
       });
-    */
   };
 
   return (
