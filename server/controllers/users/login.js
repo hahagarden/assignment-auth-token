@@ -11,6 +11,32 @@ module.exports = async (req, res) => {
     ...USER_DATA.filter((user) => user.userId === userId && user.password === password)[0],
   };
 
+  if (Object.keys(userInfo).length !== 0) {
+    console.log('cookie', req.cookies);
+
+    const { accessToken, refreshToken } = generateToken(userInfo, checkedKeepLogin);
+
+    res.cookie('access_jwt', accessToken, {
+      domain: 'localhost',
+      path: '/',
+      secure: true,
+      httpOnly: true,
+      sameSite: 'strict',
+    });
+    if (checkedKeepLogin) {
+      res.cookie('refresh_jwt', refreshToken, {
+        domain: 'localhost',
+        path: '/',
+        secure: true,
+        httpOnly: true,
+        sameSite: 'strict',
+        expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 7),
+      });
+    }
+
+    res.redirect('/userInfo');
+  } else return res.status(401).send('Not Authorized');
+
   /*
    * TODO: 로그인 로직을 구현하세요.
    *

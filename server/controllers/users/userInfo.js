@@ -3,6 +3,43 @@ const { USER_DATA } = require('../../db/data');
 const { verifyToken, generateToken } = require('../helper/tokenFunctions');
 
 module.exports = async (req, res) => {
+  const accessToken = req.cookies.access_jwt;
+  const refreshToken = req.cookies.refresh_jwt;
+  const accessPayload = verifyToken('access', accessToken);
+
+  if (accessPayload) {
+    const userInfo = { ...USER_DATA.filter((user) => user.id === accessPayload.id)[0] };
+
+    if (!userInfo.id) {
+      return res.status(401).send('Not Authorized');
+    }
+
+    delete userInfo.password;
+    return res.send(userInfo);
+  } else if (refreshToken) {
+    const refreshPayload = verifyToken('refresh', refreshToken);
+
+    if (!refreshPayload) {
+      return res.status(401).send('Not Authorized');
+    }
+
+    const userInfo = USER_DATA.filter((user) => user.id === refreshPayload.id)[0];
+    const { accessToken } = generateToken(userInfo);
+
+    res.cookie('access_jwt', accessToken, {
+      domain: 'localhost',
+      path: '/',
+      sameSite: 'strict',
+      httpOnly: true,
+      secure: true,
+      // Expires 옵션이 없는 Session Cookie
+    });
+
+    return res.send({ ...userInfo, password: undefined });
+  }
+
+  return res.status(401).send('Not Authorized');
+
   /*
    * TODO: 토큰 검증 여부에 따라 유저 정보를 전달하는 로직을 구현하세요.
    *

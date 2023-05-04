@@ -21,7 +21,7 @@ app.use(cookieParser());
 // 메서드는 GET, POST, OPTIONS를 허용합니다.
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:3001',
     methods: ['GET', 'POST', 'OPTIONS'],
     credentials: true,
   })

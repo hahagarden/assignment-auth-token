@@ -1,4 +1,12 @@
 module.exports = (req, res) => {
+  const cookiesOption = {
+    domain: 'localhost',
+    path: '/',
+    secure: true,
+    httpOnly: true,
+    sameSite: 'strict',
+  };
+  res.status(205).clearCookie('tokens', cookiesOption).send('logout');
   /*
    * TODO: 로그아웃 로직을 구현하세요. 로그아웃 요청은 쿠키에 저장된 토큰을 삭제하는 과정을 포함해야 합니다.
    *

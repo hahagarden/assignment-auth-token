@@ -1,0 +1,158 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 10,
+    "passes": 10,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-05-04T05:51:56.387Z",
+    "end": "2023-05-04T05:51:56.423Z",
+    "duration": 36
+  },
+  "tests": [
+    {
+      "title": "🚩 db에 존재하는 유저가 아니라면, 상태 코드 401와 함께 Not Authorized라는 메세지가 응답에 포함되어야 합니다.",
+      "fullTitle": "Auth - Server POST /login 🚩 db에 존재하는 유저가 아니라면, 상태 코드 401와 함께 Not Authorized라는 메세지가 응답에 포함되어야 합니다.",
+      "duration": 3,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 로그인에 성공했다면 /userinfo로 리다이렉트 되어야 합니다.",
+      "fullTitle": "Auth - Server POST /login 🚩 로그인에 성공했다면 /userinfo로 리다이렉트 되어야 합니다.",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 로그인 상태를 일시적으로 유지하는 요청이라면, Access Token만 보내야합니다.",
+      "fullTitle": "Auth - Server POST /login 🚩 로그인 상태를 일시적으로 유지하는 요청이라면, Access Token만 보내야합니다.",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 로그인 상태를 유지하는 요청이라면, Access Token과 Refresh Token을 보내야합니다.",
+      "fullTitle": "Auth - Server POST /login 🚩 로그인 상태를 유지하는 요청이라면, Access Token과 Refresh Token을 보내야합니다.",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 쿠키에 저장된 Access Token과 Refresh Token 모두 만료되었다면 상태 코드 401을 보내야합니다.",
+      "fullTitle": "GET /userinfo 🚩 쿠키에 저장된 Access Token과 Refresh Token 모두 만료되었다면 상태 코드 401을 보내야합니다.",
+      "duration": 3,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 쿠키에 저장된 Access Token이 검증되지 않았다면, 상태 코드 401와 함께 Not Authorized라는 메세지가 응답에 포함되어야 합니다.",
+      "fullTitle": "GET /userinfo 🚩 쿠키에 저장된 Access Token이 검증되지 않았다면, 상태 코드 401와 함께 Not Authorized라는 메세지가 응답에 포함되어야 합니다.",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 쿠키에 저장된 Access Token이 없다면, Refresh Token을 이용해 Access Token이 다시 발급되어야 합니다.",
+      "fullTitle": "GET /userinfo 🚩 쿠키에 저장된 Access Token이 없다면, Refresh Token을 이용해 Access Token이 다시 발급되어야 합니다.",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 쿠키에 저장된 Access Token이 검증되었다면 해당하는 유저의 정보가 응답에 포함되어야 합니다.",
+      "fullTitle": "GET /userinfo 🚩 쿠키에 저장된 Access Token이 검증되었다면 해당하는 유저의 정보가 응답에 포함되어야 합니다.",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 로그아웃 요청이 성공했다면, 205 상태코드로 응답해야 합니다.",
+      "fullTitle": "POST /logout 🚩 로그아웃 요청이 성공했다면, 205 상태코드로 응답해야 합니다.",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 로그아웃 요청 시 Access Token 및 Refresh Token이 초기화되어야 합니다.",
+      "fullTitle": "POST /logout 🚩 로그아웃 요청 시 Access Token 및 Refresh Token이 초기화되어야 합니다.",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    }
+  ],
+  "pending": [],
+  "failures": [],
+  "passes": [
+    {
+      "title": "🚩 db에 존재하는 유저가 아니라면, 상태 코드 401와 함께 Not Authorized라는 메세지가 응답에 포함되어야 합니다.",
+      "fullTitle": "Auth - Server POST /login 🚩 db에 존재하는 유저가 아니라면, 상태 코드 401와 함께 Not Authorized라는 메세지가 응답에 포함되어야 합니다.",
+      "duration": 3,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 로그인에 성공했다면 /userinfo로 리다이렉트 되어야 합니다.",
+      "fullTitle": "Auth - Server POST /login 🚩 로그인에 성공했다면 /userinfo로 리다이렉트 되어야 합니다.",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 로그인 상태를 일시적으로 유지하는 요청이라면, Access Token만 보내야합니다.",
+      "fullTitle": "Auth - Server POST /login 🚩 로그인 상태를 일시적으로 유지하는 요청이라면, Access Token만 보내야합니다.",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 로그인 상태를 유지하는 요청이라면, Access Token과 Refresh Token을 보내야합니다.",
+      "fullTitle": "Auth - Server POST /login 🚩 로그인 상태를 유지하는 요청이라면, Access Token과 Refresh Token을 보내야합니다.",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 쿠키에 저장된 Access Token과 Refresh Token 모두 만료되었다면 상태 코드 401을 보내야합니다.",
+      "fullTitle": "GET /userinfo 🚩 쿠키에 저장된 Access Token과 Refresh Token 모두 만료되었다면 상태 코드 401을 보내야합니다.",
+      "duration": 3,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 쿠키에 저장된 Access Token이 검증되지 않았다면, 상태 코드 401와 함께 Not Authorized라는 메세지가 응답에 포함되어야 합니다.",
+      "fullTitle": "GET /userinfo 🚩 쿠키에 저장된 Access Token이 검증되지 않았다면, 상태 코드 401와 함께 Not Authorized라는 메세지가 응답에 포함되어야 합니다.",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 쿠키에 저장된 Access Token이 없다면, Refresh Token을 이용해 Access Token이 다시 발급되어야 합니다.",
+      "fullTitle": "GET /userinfo 🚩 쿠키에 저장된 Access Token이 없다면, Refresh Token을 이용해 Access Token이 다시 발급되어야 합니다.",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 쿠키에 저장된 Access Token이 검증되었다면 해당하는 유저의 정보가 응답에 포함되어야 합니다.",
+      "fullTitle": "GET /userinfo 🚩 쿠키에 저장된 Access Token이 검증되었다면 해당하는 유저의 정보가 응답에 포함되어야 합니다.",
+      "duration": 2,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 로그아웃 요청이 성공했다면, 205 상태코드로 응답해야 합니다.",
+      "fullTitle": "POST /logout 🚩 로그아웃 요청이 성공했다면, 205 상태코드로 응답해야 합니다.",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "🚩 로그아웃 요청 시 Access Token 및 Refresh Token이 초기화되어야 합니다.",
+      "fullTitle": "POST /logout 🚩 로그아웃 요청 시 Access Token 및 Refresh Token이 초기화되어야 합니다.",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {}
+    }
+  ]
+}
